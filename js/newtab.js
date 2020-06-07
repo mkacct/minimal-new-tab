@@ -1,10 +1,14 @@
 'use strict';
 
-setFavicon(window.matchMedia('(prefers-color-scheme: dark)').matches);
+document.addEventListener('contextmenu', function(e) {
+	e.preventDefault();
+});
 
 window.matchMedia('(prefers-color-scheme: dark)').addListener(function(e) {
 	setFavicon(e.matches);
 });
+
+setFavicon(window.matchMedia('(prefers-color-scheme: dark)').matches);
 
 function setFavicon(isDark) {
 	document.head.removeChild(document.getElementById('favicon'));
