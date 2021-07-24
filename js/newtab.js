@@ -8,7 +8,7 @@ document.addEventListener("wheel", function(e) {
 	if (e.ctrlKey) {e.preventDefault();}
 }, {passive: false});
 
-window.matchMedia("(prefers-color-scheme: dark)").addListener(function(e) {
+window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", function(e) {
 	setFavicon(e.matches);
 });
 
